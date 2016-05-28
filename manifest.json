@@ -18,5 +18,5 @@
    "name": "Linkify TFS Issues",
    "options_page": "options.html",
    "permissions": [ "http://*/*", "https://*/*" ],
-   "version": "1.1.0"
+   "version": "1.1.1"
 }
