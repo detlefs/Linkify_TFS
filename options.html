@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Linkify TFS Issues: Options</title>
+<style type="text/css">
+
+html{height: 100%;}
+body {
+	margin: 20px;
+	font: 10px "Lucida Grande", verdana, sans-serif;
+	font-size:12px;
+}
+label {
+	display:block;
+	margin-bottom:5px;
+}
+textarea {
+	width:500px;
+	height: 100px;
+}
+
+</style>
+</head>
+
+<body>
+	<div id="install" style="display:none;" >
+		<h1>First Time Installation</h1>
+		Before this extension can be used, you must change the TFS path option below.<br /><br />
+		Some websites may not behave as expected with this extension, and a whitelist <br />
+		is provided which will allow you to conditionally enable this extension on a <br />
+		per-domain basis, if needed.<br /><br /><br />
+	</div>
+	
+	<h1>Linkify TFS Issues: Options</h1>
+
+	<form id="options_form">
+		<label for="tfs_path"> TFS Browse Path: </label>
+		<input type="text" size="70" id="tfs_path" /><br /><br />
+		<!-- <label for="blacklist"> <strong>Blacklist:</strong> Disable extension for the following domains (separate by commas): </label>
+		<textarea id="blacklist"></textarea><br /><br /> -->
+		<label for="whitelist"> <strong>Whitelist:</strong> Enable extension for the following domains only (separate by commas): </label>
+		<textarea id="whitelist"></textarea><br />
+		<small><strong>Note:</strong> You may enter partially domain names and use regular expressions.<br />If the whitelist is empty, the extension is applied to all websites. If the whitelist contains data, the<br/> extension is applied only to addresses included in the whitelist.</small>
+		<br /><br /><br />
+		<strong><em>Advanced Settings</em></strong>
+		<label for="regex"> Regular Expression to Match Against: </label>
+		<input type="text" size="40" id="regex" /><br /><small>default: \b[\d]{5}\b </br>= a numeric string with exactly 5 digits. I.e. '63491'.</small>
+	</form>
+	<br/><br/>
+	<hr/>
+	<h2>Source</h2>
+	<p>Linkify TFS was shamelessly copied and adapted from the extension <a href="https://chrome.google.com/webstore/detail/linkify-jira-issues/ekbbnaokafbanjgmcbllligemhiclbcb?hl=de" target=_blank>Linkify JIRA issues</a> by Matthew Sullivan.</p>
+	<p>Changes:</p>
+	<ul>
+		<li>Switched from blacklist filtering to whitelist filtering</li>
+		<li>Added default pattern for TFS ticket numbers</li>
+		<li>Added support for links that don't end with slash</li>
+	</ul> 
+
+<script src="js/options.js"></script>
+</body>
+</html>
